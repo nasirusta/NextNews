@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 
 const TopMenu = [
-  { url: "/", title: "Anasayfa", icon: <FaHome size={13} /> },
   {
     url: "/kategori/video-galeri",
     title: "Video Galeri",

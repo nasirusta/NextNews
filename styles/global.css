@@ -17,26 +17,30 @@
     @apply w-full font-roboto transition-all shadow;
   }
   #header {
-    @apply w-full py-3 text-white bg-[#9e0000];
+    @apply list-none w-full px-5 sm:px-1 py-3 text-white bg-[#9e0000];
   }
   .navbar {
-    @apply w-full flex flex-row justify-center items-center;
+    @apply w-full flex flex-row items-center;
   }
   .navbar nav {
-    @apply list-none flex flex-row items-center gap-4 transition-all;
+    @apply list-none hidden transition-all
+    md:flex md:flex-row md:items-center md:gap-4;
   }
   .navbar nav li {
-    @apply block;
+    @apply block last:hidden lg:last:block;
   }
   .navbar nav li a {
     @apply block uppercase font-semibold transition-all
-    text-sm py-1 text-white hover:text-opacity-80;
+    text-xs py-1 text-white hover:text-opacity-80;
   }
   .HeaderTop {
     @apply w-full bg-black py-2;
   }
   .HeaderTopMenu {
-    @apply list-none flex items-center flex-1 gap-6 m-0 p-0;
+    @apply list-none w-full hidden sm:flex sm:flex-1 sm:gap-6 m-0 p-0
+    [&>*:nth-child(1)]:hidden lg:[&>*:nth-child(1)]:flex
+    [&>*:nth-child(2)]:hidden lg:[&>*:nth-child(2)]:flex
+    [&>*:nth-child(3)]:hidden lg:[&>*:nth-child(3)]:flex;
   }
   .HeaderTopMenu li {
     @apply flex items-center;
@@ -44,5 +48,27 @@
   .HeaderTopMenu a {
     @apply flex items-center gap-1 transition-all text-xs
     uppercase font-sans font-semibold text-white hover:text-opacity-80;
+  }
+  .header-users {
+    @apply flex items-center;
+  }
+  .header-users ul {
+    @apply list-none m-0 p-0 flex items-center gap-3
+    [&>*:nth-child(1)]:flex lg:[&>*:nth-child(1)]:hidden;
+  }
+  .header-users ul li {
+    @apply flex items-center;
+  }
+  .header-users ul li a {
+    @apply flex items-center gap-2 rounded-md
+    text-xs transition-all border border-white
+    px-2 py-1 font-semibold border-opacity-50
+    text-white hover:text-opacity-80 uppercase;
+  }
+  .header-users ul li a .icon {
+    @apply block;
+  }
+  .header-users ul li a .title {
+    @apply block;
   }
 }

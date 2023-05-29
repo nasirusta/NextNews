@@ -1,6 +1,5 @@
 import Link from "next/link";
 import TopMenu from "../data/TopMenu";
-import { GiHamburgerMenu } from "react-icons/gi";
 import Brand from "./Brand";
 import HeaderUser from "./HeaderUser";
 

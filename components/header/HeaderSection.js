@@ -2,7 +2,7 @@ import Link from "next/link";
 import NavbarItems from "../data/NavbarItems";
 import HeaderTop from "./HeaderTop";
 import { FaSearch } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import MobileMenu from "./MobileMenu";
 
 const HeaderSection = () => {
   return (
@@ -11,11 +11,7 @@ const HeaderSection = () => {
       <div id="header">
         <div className="container mx-auto">
           <div className="navbar">
-            <li className="mr-7 lg:mr-10">
-              <button type="button" className="flex flex-col justify-end">
-                <GiHamburgerMenu size={22} />
-              </button>
-            </li>
+            <MobileMenu />
             <nav>
               {NavbarItems.map((row, i) => (
                 <li key={i} lang="tr">

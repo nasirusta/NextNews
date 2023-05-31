@@ -71,4 +71,9 @@
   .header-users ul li a .title {
     @apply block;
   }
+  .breaking-link {
+    @apply w-full text-center font-roboto bg-white transition-all
+    text-black text-[15px] font-semibold rounded-full py-3
+    hover:bg-red-700 hover:text-white shadow;
+  }
 }

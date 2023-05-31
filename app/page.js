@@ -2,7 +2,7 @@ import { BreakingNews } from "@/components";
 
 const page = async () => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full py-2">
       <div className="container mx-auto h-full">
         <div className="w-full flex">
           <div className="w-8/12">

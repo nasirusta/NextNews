@@ -51,20 +51,14 @@ const BreakingNews = () => {
         </SkeletonTheme>
       )}
       <div className="w-full block p-2 bg-white">
-        <ul className="w-full flex items-center gap-4">
+        <ul className="w-full flex items-center gap-2">
           {dizi.map((eleman, index) => (
             <li
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
-              className=" w-full flex justify-center"
+              className="w-full flex justify-center"
             >
-              <Link
-                href={"/"}
-                title="a"
-                replace
-                className="w-full text-center font-roboto font-semibold rounded-full p-2 transition-all
-                hover:bg-red-700 hover:text-white bg-white text-black text-[15px]"
-              >
+              <Link href={"/"} title="a" replace className="breaking-link">
                 {index + 1}
               </Link>
             </li>

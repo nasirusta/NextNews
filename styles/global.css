@@ -72,8 +72,12 @@
     @apply block;
   }
   .breaking-link {
-    @apply w-full text-center font-roboto bg-white transition-all
-    text-black text-[15px] font-semibold rounded-full py-3
-    hover:bg-red-700 hover:text-white shadow;
+    @apply w-9 text-center font-roboto bg-white transition-all
+    text-black text-[15px] font-semibold py-[6px] rounded-full
+    hover:bg-red-700 hover:text-white border;
+  }
+  .breaking-link-mobile {
+    @apply h-3 w-3 sm:w-4 sm:h-4 rounded-full transition-all
+    cursor-pointer border bg-gray-300 hover:bg-gray-400;
   }
 }

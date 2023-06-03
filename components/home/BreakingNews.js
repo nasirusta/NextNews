@@ -2,9 +2,19 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useMediaQuery } from "react-responsive";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  return isMobile ? children : null;
+};
+
+const Default = ({ children }) => {
+  const isNotMobile = useMediaQuery({ minWidth: 768 });
+  return isNotMobile ? children : null;
+};
 
 const BreakingNews = () => {
   const [dizi, setDizi] = useState([]);
@@ -31,17 +41,58 @@ const BreakingNews = () => {
     setSeciliDiziIndex(index);
   };
 
+  const newsList = (listN) => {
+    let content = [];
+    for (let i = 0; i < listN.length; i++) {
+      const item = listN[i];
+      content.push(
+        <li
+          key={i}
+          onMouseEnter={() => handleMouseEnter(i)}
+          className="w-full flex justify-center"
+        >
+          <Link
+            href={item.url}
+            title={item.id}
+            target="_blank"
+            replace
+            className={i === i ? "breaking-link" : "breaking-link"}
+          >
+            {i + 1}
+          </Link>
+        </li>
+      );
+    }
+    return content;
+  };
+
+  const newsListMobile = (listN) => {
+    let content = [];
+    for (let i = 0; i < listN.length; i++) {
+      content.push(
+        <li
+          key={i}
+          onMouseEnter={() => handleMouseEnter(i)}
+          className="breaking-link-mobile"
+        ></li>
+      );
+    }
+    return content;
+  };
+
   return (
     <div className="w-full flex flex-col overflow-hidden">
       {dizi[seciliDiziIndex] && (
         <div className="relative w-full h-96">
-          <Image
-            unoptimized
-            src={dizi[seciliDiziIndex]?.url}
-            alt={dizi[seciliDiziIndex]?.title}
-            fill
-          />
-          {dizi[seciliDiziIndex]?.title}
+          <Link href="/aasd" replace className="w-full h-full">
+            <Image
+              unoptimized
+              src={dizi[seciliDiziIndex]?.url}
+              alt={dizi[seciliDiziIndex]?.title}
+              fill
+            />
+            {dizi[seciliDiziIndex]?.title}
+          </Link>
         </div>
       )}
       {!dizi[seciliDiziIndex] && (
@@ -51,18 +102,9 @@ const BreakingNews = () => {
         </SkeletonTheme>
       )}
       <div className="w-full block p-2 bg-white">
-        <ul className="w-full flex items-center gap-2">
-          {dizi.map((eleman, index) => (
-            <li
-              key={index}
-              onMouseEnter={() => handleMouseEnter(index)}
-              className="w-full flex justify-center"
-            >
-              <Link href={"/"} title="a" replace className="breaking-link">
-                {index + 1}
-              </Link>
-            </li>
-          ))}
+        <ul className="w-full flex justify-center md:justify-start gap-2 md:gap-1 items-center">
+          <Mobile>{newsListMobile(dizi)}</Mobile>
+          <Default>{newsList(dizi)}</Default>
         </ul>
       </div>
     </div>

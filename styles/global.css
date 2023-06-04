@@ -80,4 +80,9 @@
     @apply h-3 w-3 sm:w-4 sm:h-4 rounded-full transition-all
     cursor-pointer border bg-gray-300 hover:bg-gray-400;
   }
+  .slideArrows {
+    @apply absolute z-10 top-[30%] text-lg -mx-7 transition-all
+    rounded-full bg-black bg-opacity-60 text-white p-2
+    hover:bg-opacity-90;
+  }
 }

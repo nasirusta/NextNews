@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import Link from "next/link";
-import { capitalCase } from "capital-case";
 
 const fetchData = async () => {
   try {
     const response = await fetch("http://netewmedya.com/control/api/writers", {
       cache: "no-store",
+      method: "GET",
     });
     const data = await response.json();
     return data;
@@ -46,12 +46,12 @@ const Authors = async () => {
     dots: true,
     dotsClass: "slick-dots",
     infinite: true,
-    // speed: 1000,
+    speed: 1500,
     slidesToShow: 4,
     slidesToScroll: 4,
     adaptiveHeight: true,
-    // autoplay: true,
-    // autoplaySpeed: 3500,
+    autoplay: true,
+    autoplaySpeed: 3500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -122,9 +122,8 @@ const Authors = async () => {
   return (
     <div className="w-full mb-4 pt-3 pb-2 px-7 border shadow bg-white">
       <Slider {...settings}>
-        {articles.map((row, i) => (
-          <Slide key={i} index={i} data={row} />
-        ))}
+        {articles &&
+          articles.map((row, i) => <Slide key={i} index={i} data={row} />)}
       </Slider>
     </div>
   );

@@ -8,16 +8,21 @@
     @apply h-full min-h-full;
   }
   body {
-    @apply h-full antialiased font-sans bg-gray-100;
+    @apply h-full overflow-x-hidden flex flex-col justify-start
+    relative antialiased font-sans bg-gray-100;
   }
   main {
-    @apply flex flex-col;
+    @apply w-full block;
   }
   header {
     @apply w-full font-roboto transition-all shadow;
   }
   #header {
     @apply list-none w-full px-5 sm:px-1 py-3 text-white bg-[#9e0000];
+  }
+  footer {
+    @apply block w-full border-t border-black font-roboto
+    text-white bg-[#242424] text-opacity-60 mt-5;
   }
   .navbar {
     @apply w-full flex flex-row items-center;
@@ -84,5 +89,8 @@
     @apply absolute z-10 top-[30%] text-lg -mx-7 transition-all
     rounded-full bg-black bg-opacity-60 text-white p-2
     hover:bg-opacity-90;
+  }
+  .HomeNewsCategories {
+    @apply w-full flex flex-col gap-2 my-7;
   }
 }

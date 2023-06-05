@@ -90,18 +90,19 @@ const Authors = async () => {
     return (
       <div className="w-full h-full" {...props}>
         <div className="w-full h-full flex gap-2 font-roboto group">
-          <div className="relative h-[70px] w-[70px]">
-            <Link href="/aasd" replace>
+          <Link href="/aasd" replace>
+            <div className="relative h-[70px] w-[70px]">
               <Image
                 unoptimized
+                priority={false}
                 className="object-cover border brightness-125 p-1
                 drop-shadow-lg rounded-full border-black border-opacity-20"
                 src={data.resim}
                 alt={data.yazar}
                 fill
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="flex-1 h-20 flex flex-col justify-center">
             <div className="w-full text-sm font-semibold group-hover:underline overflow-hidden">
               <Link href={data.url} replace>

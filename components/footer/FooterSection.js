@@ -1,7 +1,11 @@
 const FooterSection = () => {
   return (
     <footer>
-      <p>© 2023 Tüm hakları saklıdır.</p>
+      <div className="container mx-auto">
+        <div className="w-full flex justify-center items-center">
+          <p className="my-1 text-sm">© 2023 Tüm hakları saklıdır.</p>
+        </div>
+      </div>
     </footer>
   );
 };

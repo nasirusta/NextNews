@@ -25,8 +25,18 @@ const NewsRow = ({ data }) => {
   return (
     <div className="w-full group">
       <div className="w-full h-[115px] relative">
-        <Link href="/" replace className="w-full h-full block overflow-hidden">
-          <Image unoptimized src={data?.url} alt={data.title} fill />
+        <Link
+          href="/"
+          replace
+          className="w-full h-full rounded-tl-md rounded-tr-md block overflow-hidden"
+        >
+          <Image
+            unoptimized
+            src={data?.url}
+            alt={data.title}
+            className="rounded-tl-md rounded-tr-md"
+            fill
+          />
         </Link>
       </div>
       <div className="w-full h-16 p-2">

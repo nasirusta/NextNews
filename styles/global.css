@@ -93,4 +93,26 @@
   .HomeNewsCategories {
     @apply w-full flex flex-col gap-4 my-7;
   }
+  .breadcrumbs {
+    @apply block border-t border-b my-2 bg-white py-2;
+  }
+  .breadcrumbs ul {
+    @apply flex items-center gap-1;
+  }
+  .breadcrumbs ul li {
+    @apply flex items-center after:content-['/'] last:after:content-[''];
+  }
+  .breadcrumbs ul li a {
+    @apply flex items-center py-1 gap-1 px-2
+    leading-5 text-black text-sm hover:underline;
+  }
+  .breadcrumbs ul li span {
+    @apply px-2 leading-5 text-black text-sm text-opacity-60;
+  }
+  .ContentNews{
+    @apply w-full block leading-[30px] text-xl;
+  }
+  .ContentNews p{
+    @apply w-full my-4 py-2;
+  }
 }

@@ -90,7 +90,7 @@ const Authors = async () => {
     return (
       <div className="w-full h-full" {...props}>
         <div className="w-full h-full flex gap-2 font-roboto group">
-          <Link href="/aasd" replace>
+          <Link href={`/yazi/${data.data[0].url}`} replace>
             <div className="relative h-[70px] w-[70px]">
               <Image
                 unoptimized
@@ -105,12 +105,12 @@ const Authors = async () => {
           </Link>
           <div className="flex-1 h-20 flex flex-col justify-center">
             <div className="w-full text-sm font-semibold group-hover:underline overflow-hidden">
-              <Link href={data.url} replace>
+              <Link href={`/yazar/${data.url}`} replace>
                 {data.yazar}
               </Link>
             </div>
             <div className="w-full text-[13px] font-semibold group-hover:underline overflow-hidden">
-              <Link href={`/${data.data[0].url}`} replace>
+              <Link href={`/yazi/${data.data[0].url}`} replace>
                 {data?.data[0]?.baslik}
               </Link>
             </div>

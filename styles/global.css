@@ -109,10 +109,10 @@
   .breadcrumbs ul li span {
     @apply px-2 leading-5 text-black text-sm text-opacity-60;
   }
-  .ContentNews{
+  .ContentNews {
     @apply w-full block leading-[30px] text-xl;
   }
-  .ContentNews p{
+  .ContentNews p {
     @apply w-full my-4 py-2;
   }
 }

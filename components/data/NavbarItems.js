@@ -1,6 +1,6 @@
 const NavbarItems = [
   { url: "/", title: "Anasayfa" },
-  { url: "/", title: "Gündem" },
+  { url: "/kategori/gundem", title: "Gündem" },
   { url: "/yazarlar", title: "Yazarlar" },
   { url: "/kategori/dunya", title: "Dünya" },
   { url: "/kategori/ekonomi", title: "Ekonomi" },
